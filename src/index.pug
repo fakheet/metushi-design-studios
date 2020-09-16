@@ -1,0 +1,130 @@
+- const li1= "Phasellus in tincidunt velit. Etiam fermentum fringilla tristique. Aenean posuere aliquam interdum. Sed dignissim turpis eget leo ultricies ultricies. Sed et felis leo, eget dapibus massa. Etiam volutpat vehicula dolor, vel placerat odio posuere non.";
+- const li2= "Phasellus in tincidunt velit. Etiam fermentum fringilla tristique. Aenean posuere aliquam interdum. Sed dignissim turpis eget leo ultricies ultricies. ";
+- const li3= "Fusce placerat bibendum augue, non posuere lorem facilisis sit amet. Mauris malesuada nunc eget est pellentesque sit amet aliquet dolor pharetra. Integer placerat elit quis nisl dignissim non consectetur quam vestibulum. Suspendisse tincidunt adipiscing magna, ut dapibus nulla varius nec. Proin mi dolor, dapibus nec congue posuere, ornare sit.";
+
+mixin blogpost(title, img, text)
+    .blogpost
+        img(src= img, alt="post image")
+        .blogpost-text
+            h3= title
+            .separator
+            p= text
+
+mixin social-media-link(logo, link)
+    .social-media-link
+        a(href=`${link}`)
+            i(class=`${logo}`)
+
+mixin footer-social-media-link(logo, link)
+    .footer-social-media-link
+        a(href=`${link}`)
+            i(class=`${logo}`)
+
+mixin section(title)
+    section
+        .section-header= title
+        block
+
+
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap")
+        link(rel="stylesheet", href="./styles.scss")
+        link(rel="stylesheet", href="../node_modules/@fortawesome/fontawesome-free/css/all.css")
+        title Metushi
+    body
+        header
+            .header-top
+                .header-top-inside
+                    .logo metushi
+                    .social-media-bar
+                        +social-media-link("fab fa-twitter", "https://www.twitter.com/")
+                        +social-media-link("fab fa-facebook-f", "https://www.facebook.com/")
+                        +social-media-link("fab fa-dribbble", "https://www.dribbble.com/")
+                        +social-media-link("fas fa-rss", "https://chrome.google.com/webstore/detail/rss-feed-reader/pnjaodmkngahhkoihejjehlcdlnohgmp?hl=en")
+            .header-middle
+                p Many things difficult to
+                    b  design
+                    |  prove easy to performance
+            .header-bottom
+                nav
+                    a(href="/").navlink
+                        img(src="../img/home.png")
+                    a(href="/").navlink About Us
+                    a(href="/").navlink Portfolio
+                    a(href="/").navlink Blog
+                    a(href="/").navlink Features
+                    a(href="/").navlink Contact
+                    .search-box-wrapper
+                        input(type="text").search-box
+
+        +section("Last Projects")
+            .tiles
+                img(src="../img/pic1.png")
+                img(src="../img/pic2.png")
+                img(src="../img/pic3.png")
+                img(src="../img/pic4.png")
+                img(src="../img/pic5.png")
+                img(src="../img/pic6.png")
+                img(src="../img/pic7.png")
+                img(src="../img/pic8.png")
+
+        +section("Blog Posts")
+            .masonry
+                +blogpost("This is a blog post title", "../img/bp1.png", `${li1}`)
+                +blogpost("This is a blog post title", "../img/bp3.png", `${li3}`)
+                +blogpost("This is a blog post title", "../img/bp2.png", `${li2}`)
+                +blogpost("This is a blog post title", "../img/bp1.png", `${li1}`)
+                +blogpost("This is a blog post title", "../img/bp3.png", `${li3}`)
+                +blogpost("This is a blog post title", "../img/bp2.png", `${li2}`)
+
+        footer
+            .footer-top
+                h2 Testimonials
+                div(style="display:flex")
+                    .footer-top-quotes
+                        .quote-text Praesent pulvinar, est eget pharetra euismod, metus felis condimentum massa, ut vestibulum ipsum risus vel ligula. In hac habitasse platea dictumst.
+                        .quote-source by Esmet Hajrizi
+                    .buttons
+                        i(class="fas fa-angle-right")
+                        i(class="fas fa-angle-left")
+                .triangle
+                    .outer-triangle
+                    .inner-triangle
+                    .border-cover
+
+
+            .footer-middle
+                .footer-middle-wrapper
+                    .footer-middle-column
+                        .footer-heading About Us
+                        .footer-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla in purus nibh. Donec ornare felis neque. Nullam tortor nulla, sodales quis posuere quis, tristique nec libero. Proin vitae convallis odio. Morbi nec enim nisi. Aliquam erat volutpat.
+                    .footer-middle-column
+                        .footer-heading Twitter Feed
+                        .footer-text
+                            .tweet-text Check out the best themes in the world online at
+                                a(href="https://themeforest.com")  themeforest.com
+                            .tweet-date 1 day ago
+                            .tweet-text
+                                a(href="https://twitter.com/") @envanto
+                                |, Motive wordpress theme full responsive is coming soon...
+
+                            .tweet-date 4 days ago
+                    .footer-middle-column
+                        .footer-heading Follow Us
+                        .footer-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla in purus nibh. Donec ornare felis neque. Nullam tortor!
+                        .footer-social-media-bar
+                            +footer-social-media-link("fab fa-twitter", "https://www.twitter.com/")
+                            +footer-social-media-link("fab fa-facebook-f", "https://www.facebook.com/")
+                            +footer-social-media-link("fab fa-dribbble", "https://www.dribbble.com/")
+                            +footer-social-media-link("fab fa-behance", "https://www.behance.net/")
+                            +footer-social-media-link("fas fa-rss", "https://chrome.google.com/webstore/detail/rss-feed-reader/pnjaodmkngahhkoihejjehlcdlnohgmp?hl=en")
+
+            .footer-bottom
+                .footer-bottom-wrapper Copyright 2012 All Rights Reserved
+                    a(href="#top")
+                        .top-button
+                            i(class="fas fa-angle-up")
