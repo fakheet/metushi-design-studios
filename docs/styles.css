@@ -5,7 +5,7 @@ body {
   font-weight: 400;
   font-size: 12px;
   line-height: 19px;
-  background: url("/so-white.1965bf94.png") repeat;
+  background: url("so-white.9fda0818.png") repeat;
 }
 
 .social-media-link a {
@@ -419,9 +419,9 @@ h2 {
 
 @font-face {
   font-family: "Wolf Sans Regular";
-  src: url("/Wolf_Sans_Regular.e0867773.eot?") format("eot"), url("/Wolf_Sans_Regular.d81a7375.woff") format("woff"), url("/Wolf_Sans_Regular.054c1e1f.ttf") format("truetype"), url("/Wolf_Sans_Regular.eb46d257.svg#WolfSans-Regular") format("svg");
+  src: url("Wolf_Sans_Regular.109d1902.eot?") format("eot"), url("Wolf_Sans_Regular.085f9849.woff") format("woff"), url("Wolf_Sans_Regular.855b17bc.ttf") format("truetype"), url("Wolf_Sans_Regular.48bc9565.svg#WolfSans-Regular") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 
-/*# sourceMappingURL=/styles.css.map */
+/*# sourceMappingURL=styles.css.map */
